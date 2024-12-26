@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP máy đeo bao tay y tế</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(45deg, #ff6b6b, #f06595);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background: #343a40;
+            color: white;
+            padding: 10px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+        }
+
+        .navbar a:hover {
+            background: #495057;
+            border-radius: 5px;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product .info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product .info h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .product .info p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .product .info .price {
+            font-size: 1.2rem;
+            color: #ff6b6b;
+            margin: 10px 0;
+        }
+
+        .product .info button {
+            background: linear-gradient(45deg, #ff6b6b, #f06595);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product .info button:hover {
+            opacity: 0.9;
+        }
+
+        .chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #f06595);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .chat-box {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: #fff;
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .chat-box.active {
+            display: flex;
+        }
+
+        .chat-header {
+            background: #343a40;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .chat-body {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chat-footer {
+            display: flex;
+            padding: 10px;
+            background: #f1f1f1;
+        }
+
+        .chat-footer input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background: #e9ecef;
+            margin-right: 10px;
+        }
+
+        .chat-footer button {
+            background: linear-gradient(45deg, #ff6b6b, #f06595);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .chat-footer button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Shop - Máy đeo bao tay y tế</h1>
+    </header>
+    <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Giới thiệu sản phẩm</a>
+        <a href="#">Thông tin liên hệ</a>
+    </nav>
+    <div class="container">
+        <section class="products">
+            <div class="product">
+                <img src="data:image/webp;base64,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" alt="Product 1">
+                <div class="info">
+                    <h2>Sản phẩm 1</h2>
+                    <p>Bao tay y tế</p>
+                    <div class="price">25.000 VNĐ</div>
+                    <button>Mua</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="data:image/jpeg;base64,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" alt="Product 2">
+                <div class="info">
+                    <h2>Sản phẩm 2</h2>
+                    <p>Dung dịch sát khuẩn</p>
+                    <div class="price">45.000 VNĐ</div>
+                    <button>Mua</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200" alt="Product 3">
+                <div class="info">
+                    <h2>Sản Phẩm 3</h2>
+                    <p>Máy đeo bao tay y tế</p>
+                    <p>và sát khuẩn</p>
+                    <div class="price">1.400.000 VNĐ</div>
+                    <button>Mua</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="chat-icon" id="chatIcon" onclick="toggleChat()">
+        💬
+    </div>
+
+    <div class="chat-box" id="chatBox">
+        <div class="chat-header" id="chatHeader">Chatbot</div>
+        <div class="chat-body" id="chatBody"></div>
+        <div class="chat-footer">
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chatBox');
+        function toggleChat() {
+            chatBox.classList.toggle('active');
+        }
+
+        function sendMessage() {
+            const chatBody = document.getElementById('chatBody');
+            const chatInput = document.getElementById('chatInput');
+            const userMessage = chatInput.value.trim();
+
+            if (!userMessage) return;
+
+            addMessage(userMessage, 'user');
+            setTimeout(() => addMessage('This is a bot response.', 'bot'), 500);
+
+            chatInput.value = '';
+        }
+
+        function addMessage(content, role) {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = content;
+            messageElement.style.padding = '10px';
+            messageElement.style.borderRadius = '20px';
+            messageElement.style.margin = '5px 0';
+            messageElement.style.background = role === 'user' ? '#ff6b6b' : '#f06595';
+            messageElement.style.color = 'white';
+            messageElement.style.alignSelf = role === 'user' ? 'flex-end' : 'flex-start';
+            chatBody.appendChild(messageElement);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+    </script>
+</body>
+</html>
