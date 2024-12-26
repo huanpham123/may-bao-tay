@@ -188,6 +188,36 @@
         .chat-footer button:hover {
             opacity: 0.9;
         }
+        @media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .product {
+        width: 100%; /* Sản phẩm chiếm hết chiều rộng màn hình trên điện thoại */
+    }
+
+    .chat-box {
+        width: 90%; /* Mở rộng chat box trên điện thoại */
+        bottom: 80px;
+    }
+
+    .chat-icon {
+        right: 10px;
+    }
+}
+
+/* Media Queries cho màn hình cực nhỏ */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .product .info h2 {
+        font-size: 1.2rem;
+    }
+}
     </style>
 </head>
 <body>
